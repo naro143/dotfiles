@@ -17,9 +17,13 @@ alias tree='tree -a -I "\.DS_Store|\.git|\.svn|node_modules|vendor|volumes" -N -
 # requires rmtrash
 alias rm='rmtrash'
 
-# requires github/gh
+# requires gsed
+alias sed='gsed'
+
+# requires github/gh/gh
 alias github="gh repo view --web"
 alias pr="gh pr create"
 
 alias dc='docker-compose'
 alias kc='kubectl'
+

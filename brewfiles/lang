@@ -1,0 +1,30 @@
+brew 'llvm'
+
+brew 'python'
+
+tap 'dart-lang/dart'
+brew 'dart'
+
+brew 'yamllint'
+
+brew 'readline'
+brew 'rbenv'
+brew 'ruby-build'
+
+brew 'go'
+brew 'golangci/tap/golangci-lint'
+
+brew 'nodenv'
+brew 'yarn'
+
+brew 'pyenv'
+
+# Java
+# brew 'mvn'
+
+# Dockerfile
+brew 'hadolint'
+
+# ShellScript
+brew 'shellcheck'
+

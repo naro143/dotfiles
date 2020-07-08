@@ -24,6 +24,9 @@ case `uname` in
     # java
     export PATH="$PATH:/usr/local/opt/openjdk/bin"
 
+    # llvm
+    export PATH="$PATH:/usr/local/opt/llvm/bin"
+
     # python
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PATH:$PYENV_ROOT/bin"

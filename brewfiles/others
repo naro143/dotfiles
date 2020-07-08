@@ -1,0 +1,12 @@
+brew 'ffmpeg'
+
+brew 'awscli'
+
+brew 'redis'
+brew 'mysql'
+brew 'mycli'
+brew 'sqlite'
+brew 'postgresql'
+
+brew 'kubernetes-cli'
+

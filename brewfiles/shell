@@ -1,0 +1,27 @@
+# shell, terminal
+brew 'zsh'
+brew 'tmux'
+brew 'vim'
+brew 'reattach-to-user-namespace'
+tap 'github/gh'
+brew 'gh'
+brew 'rmtrash'
+brew 'ghq'
+brew 'gnu-sed'
+brew 'tree'
+brew 'jq'
+brew 'ripgrep'
+brew 'git-lfs'
+
+# signing
+brew 'gnupg'
+brew 'pinentry-mac'
+
+# utils
+brew 'gibo'
+brew 'git-secrets'
+brew 'cmake'
+brew 'nkf'
+brew 'procs'
+brew 'tig'
+

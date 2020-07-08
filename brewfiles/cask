@@ -1,0 +1,33 @@
+cask 'alacritty'
+
+cask 'alfred'
+
+cask 'docker'
+
+cask 'java'
+
+# browsers
+cask 'google-chrome'
+cask 'brave-browser'
+cask 'chromedriver'
+
+# authentication
+# cask '1password'
+# cask 'authy'
+
+# chat application
+cask 'discord'
+
+# storage
+cask 'google-backup-and-sync'
+
+# input
+cask 'google-japanese-ime'
+cask 'cmd-eikana'
+
+cask 'visual-studio-code'
+cask 'android-studio'
+
+# others
+cask 'ngrok'
+cask 'zoomus'

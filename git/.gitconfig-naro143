@@ -1,0 +1,13 @@
+[user]
+  name = naro143
+  email = hoshipuri0902@gmail.com
+
+[github]
+  user = naro143
+
+[gpg]
+  program = gpg
+
+[commit]
+  gpgsign = true
+

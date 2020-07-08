@@ -1,0 +1,55 @@
+[includeIf "gitdir:~/ghq/github.com/"]
+  path = ~/.gitconfig-naro143
+[includeIf "gitdir:~/dotfiles/"]
+  path = ~/.gitconfig-naro143
+
+# add enterprise setting
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore_global
+  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  ignorecase = false
+
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+
+[fetch]
+  prune = true
+
+[pull]
+  rebase = false
+
+[apply]
+  whitespace = nowarn
+
+[log]
+  date = short
+
+[color]
+  ui = true
+  branch = auto
+  diff = auto
+  status = auto
+  showbranch = auto
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[filter "lfs"]
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+

@@ -16,6 +16,9 @@ source "$HOME/dotfiles/zsh/command.zsh"
 # settings for fzf
 export FZF_DEFAULT_COMMAND="rg --files --hidden --smart-case --glob='!.git/*'"
 
+# settings for gpg
+export GPG_TTY=$(tty)
+
 # display
 setopt print_exit_value
 

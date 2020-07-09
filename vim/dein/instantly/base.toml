@@ -1,0 +1,50 @@
+# language packs
+[[plugins]]
+repo = 'sheerun/vim-polyglot'
+hook_add = '''
+let g:polyglot_disabled = ['elm']
+'''
+
+# comment out
+[[plugins]]
+repo = 'tyru/caw.vim.git'
+hook_add = '''
+nmap <C-c> <Plug>(caw:hatpos:toggle)
+vmap <C-c> <Plug>(caw:hatpos:toggle)
+'''
+
+# auto close parentheses
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+# change operator by s+a/d/r
+[[plugins]]
+repo = 'kana/vim-operator-user'
+[[plugins]]
+repo = 'rhysd/vim-operator-surround'
+depends = 'kana/vim-operator-user'
+hook_add = '''
+map <silent>sa <Plug>(operator-surround-append)
+map <silent>sd <Plug>(operator-surround-delete)
+map <silent>sr <Plug>(operator-surround-replace)
+'''
+
+# improved autoread
+[[plugins]]
+repo = 'tmux-plugins/vim-tmux-focus-events'
+
+# overwrite f
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+hook_add = '''
+" Move to char (overwrite f)
+map  f <Plug>(easymotion-bd-f)
+nmap f <Plug>(easymotion-overwin-f)
+" Move to line (overwrite L)
+map L <Plug>(easymotion-bd-jk)
+nmap L <Plug>(easymotion-overwin-line)
+" Move to word
+map  W <Plug>(easymotion-bd-w)
+nmap W <Plug>(easymotion-overwin-w)
+let g:EasyMotion_smartcase=1
+'''

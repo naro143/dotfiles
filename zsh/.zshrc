@@ -12,6 +12,7 @@ source "$HOME/dotfiles/zsh/history.zsh"
 source "$HOME/dotfiles/zsh/lang.zsh"
 source "$HOME/dotfiles/zsh/plugin.zsh"
 source "$HOME/dotfiles/zsh/command.zsh"
+source "$HOME/dotfiles/zsh/customize.zsh"
 
 # settings for fzf
 export FZF_DEFAULT_COMMAND="rg --files --hidden --smart-case --glob='!.git/*'"

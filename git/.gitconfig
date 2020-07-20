@@ -1,4 +1,4 @@
-[includeIf "gitdir:~/ghq/github.com/"]
+[includeIf "gitdir:~/ghq/src/github.com/"]
   path = ~/.gitconfig-naro143
 [includeIf "gitdir:~/dotfiles/"]
   path = ~/.gitconfig-naro143
@@ -53,3 +53,5 @@
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
 
+[ghq]
+  root = ~/ghq/src

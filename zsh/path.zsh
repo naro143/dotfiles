@@ -16,7 +16,7 @@ case `uname` in
     export PATH="$PATH:$HOME/.pub-cache/bin"
 
     # golang
-    export GOPATH="$HOME/go"
+    export GOPATH="$HOME/ghq"
     export PATH="$PATH:$GOPATH/bin"
     export GOENV_ROOT="$HOME/.goenv"
     export PATH="$PATH:$GOENV_ROOT/bin"

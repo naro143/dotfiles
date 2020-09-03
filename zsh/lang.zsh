@@ -16,7 +16,7 @@ if [ `uname` = 'Darwin' ]; then
 
   function nodenv() {
     unset -f nodenv
-    eval "$(nodevn init - --no-rehash)"
+    eval "$(nodenv init - --no-rehash)"
     nodenv "$@"
   }
 

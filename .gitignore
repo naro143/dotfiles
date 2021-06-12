@@ -1,4 +1,4 @@
 vim/.vim/view
 vim/.vim/sessions
 brewfiles/*.lock.json
-
+zsh/secret.zsh

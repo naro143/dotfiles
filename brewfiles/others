@@ -10,3 +10,6 @@ brew 'postgresql'
 
 brew 'kubernetes-cli'
 
+# window manager 
+brew 'koekeishiya/formulae/yabai'
+brew 'koekeishiya/formulae/skhd'

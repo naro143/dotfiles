@@ -1,4 +1,6 @@
-cask 'alacritty'
+# terminal
+# cask 'alacritty'
+cask 'iterm2'
 
 cask 'alfred'
 

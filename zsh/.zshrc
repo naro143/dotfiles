@@ -15,7 +15,7 @@ source "$HOME/dotfiles/zsh/command.zsh"
 source "$HOME/dotfiles/zsh/customize.zsh"
 
 # gitignore
-# source "$HOME/dotfiles/zsh/secret.zsh"
+source "$HOME/dotfiles/zsh/secret.zsh"
 
 # settings for fzf
 export FZF_DEFAULT_COMMAND="rg --files --hidden --smart-case --glob='!.git/*'"

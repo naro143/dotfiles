@@ -54,3 +54,27 @@ case `uname` in
   ;;
 esac
 
+# sshの接続先ごとに背景色を変更する
+function ssh() {
+  # tmux利用時にだけ有効とする
+  if [[ -n $(printenv TMUX) ]] ; then
+    # 現在のペインIDを記録
+    local pane_id=$(tmux display -p '#{pane_id}')
+
+    # 特定のssh先の場合に色を変更する
+    if [[ `echo $1 | grep 'prd'` ]] ; then
+      tmux select-pane -P 'bg=colour54,fg=white'
+    elif [[ `echo $1 | grep 'stg'` ]] ; then
+      tmux select-pane -P 'bg=colour22,fg=white'
+    else
+      tmux select-pane -P 'bg=colour17,fg=white'
+    fi
+
+    # sshが終了したらdefaultの色に戻す
+    trap 'tmux select-pane -t "$pane_id" -P "default"' 0 1 2 3 15
+
+    command ssh $@  
+  else
+    command ssh $@
+  fi
+}

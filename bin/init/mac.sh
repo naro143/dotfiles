@@ -102,3 +102,10 @@ printf "\n--- Installing apps by mas.. ---\n"
 brew install mas
 brew bundle --file="~/dotfiles/brewfiles/mas"
 
+printf "\n--- TODO... ---\n"
+printf "\n* Setup .gitconfig-naro143\n"
+printf "\n* Moving dotfiles repository\n"
+printf "\n  * rm ~/dotfiles\n"
+printf "\n  * ghq get git@github.com:naro143/dotfiles.git\n"
+printf "\n  * ln -s /Users/naro143/ghq/src/github.com/naro143/dotfiles ~/dotfiles\n"
+

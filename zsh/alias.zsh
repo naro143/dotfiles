@@ -14,8 +14,8 @@ alias cpu='procs --watch --sortd cpu'
 # requires tree
 alias tree='tree -a -I "\.DS_Store|\.git|\.svn|node_modules|vendor|volumes" -N -A -C'
 
-# requires rmtrash
-alias rm='rmtrash'
+# requires trash
+alias rm='trash -r'
 
 # requires gsed
 alias sed='gsed'

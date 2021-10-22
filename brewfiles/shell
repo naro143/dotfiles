@@ -5,8 +5,6 @@ brew 'vim'
 brew 'reattach-to-user-namespace'
 tap 'github/gh'
 brew 'gh'
-# removed from brew. install by http://www.nightproductions.net/cli.htm
-# brew 'rmtrash'
 brew 'ghq'
 brew 'gnu-sed'
 brew 'tree'

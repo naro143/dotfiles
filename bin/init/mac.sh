@@ -44,6 +44,10 @@ rm ~/installer.sh
 printf "\n--- Installing shell packages ---\n"
 brew bundle --file="~/dotfiles/brewfiles/shell"
 
+# install trash
+curl -O https://raw.githubusercontent.com/h-matsuo/macOS-trash/master/trash; chmod +x trash; mv trash /usr/local/bin
+
+
 [ -f ~/.tmux.conf ] && mv ~/.tmux.conf ~/backup/
 [ -f ~/.bash_profile ] && mv ~/.bash_profile ~/backup/
 [ -f ~/.bashrc ] && mv ~/.bashrc ~/backup/

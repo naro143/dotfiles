@@ -72,9 +72,7 @@ function ssh() {
 
     # sshが終了したらdefaultの色に戻す
     trap 'tmux select-pane -t "$pane_id" -P "default"' 0 1 2 3 15
-
-    command ssh $@  
-  else
-    command ssh $@
   fi
+  
+  command ssh $@
 }

@@ -102,6 +102,9 @@ printf "\n--- Installing apps by mas.. ---\n"
 brew install mas
 brew bundle --file="~/dotfiles/brewfiles/mas"
 
+printf "\n--- Other Settings... ---\n"
+echo "pinentry-program $(which pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
+
 printf "\n--- TODO... ---\n"
 printf "\n* Setup .gitconfig-naro143\n"
 printf "\n* Moving dotfiles repository\n"

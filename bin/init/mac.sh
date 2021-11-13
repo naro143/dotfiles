@@ -67,6 +67,7 @@ ln -s ~/dotfiles/tig/.tigrc ~
 ln -s ~/dotfiles/efm-langserver/efm-config.yml ~/.config/efm-langserverconfig.yaml
 ln -s ~/dotfiles/yabai/.yabairc ~/.yabairc
 ln -s ~/dotfiles/skhd/.skhdrc ~/.skhdrc
+ln -s ~/dotfiles/ripgrep/.rgignore ~/.rgignore
 
 source ~/.zshrc
 

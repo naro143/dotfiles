@@ -20,6 +20,7 @@ repo = 'jiangmiao/auto-pairs'
 # change operator by s+a/d/r
 [[plugins]]
 repo = 'kana/vim-operator-user'
+
 [[plugins]]
 repo = 'rhysd/vim-operator-surround'
 depends = 'kana/vim-operator-user'

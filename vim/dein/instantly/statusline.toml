@@ -1,0 +1,31 @@
+# status line
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+let g:lightline = {
+  \ 'colorscheme': 'onedark',
+  \ 'active': {
+  \   'left': [
+  \     ['mode', 'paste'],
+  \     ['gitbranch', 'readonly', 'relativepath'],
+  \   ],
+  \   'right': [
+  \     ['percent'],
+  \     ['fileencoding', 'filetype'],
+  \   ],
+  \ },
+  \ 'inactive': {
+  \   'left': [
+  \     ['readonly', 'relativepath'],
+  \   ],
+  \   'right': [],
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'GitStatus',
+  \ },
+\ }
+function GitStatus() abort
+  return get(g:, 'coc_git_status', '')
+endfunction
+'''
+

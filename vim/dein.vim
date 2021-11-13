@@ -28,6 +28,12 @@ if dein#load_state(s:dein_dir)
     call dein#load_toml(file, { 'lazy': 1 })
   endfor
 
+  " nvim
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
+
   call dein#end()
   call dein#save_state()
 endif

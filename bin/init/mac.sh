@@ -62,7 +62,14 @@ ln -s ~/dotfiles/bash/.bashrc ~
 ln -s ~/dotfiles/tmux/.tmux.conf ~
 ln -s ~/dotfiles/vim/.vimrc ~
 ln -s ~/dotfiles/vim/.vim ~
+#ln -s ~/dotfiles/.xvimrc ~
+#ln -s ~/dotfiles/.ideavimrc ~
+#ln -s ~/dotfiles/.textlintrc ~
+ln -s ~/dotfiles/vim/nvim ~/.config/nvim
+ln -s ~/dotfiles/vim/.vim/* ~/.config/nvim/
 ln -s ~/dotfiles/vim/coc/package.json ~/.config/coc/extensions/
+
+# others
 ln -s ~/dotfiles/tig/.tigrc ~
 ln -s ~/dotfiles/efm-langserver/efm-config.yml ~/.config/efm-langserverconfig.yaml
 ln -s ~/dotfiles/yabai/.yabairc ~/.yabairc

@@ -45,6 +45,10 @@ set incsearch " incremental search
 set smartcase " ignore ignorecase when includes upper case letters
 set ignorecase " ignore upper/lower case
 set hlsearch " highlight search result
+if has('nvim')
+  set inccommand=nosplit " highlight replace
+endif"
+
 set wrapscan " re-search after end of file
 set wildignore+=*/tmp*,*.so,*.swp,*.zip
 
@@ -55,14 +59,17 @@ set whichwrap=b,s,h,l,<,>,[,],~
 " enable mouse
 if has('mouse')
   set mouse=a
-  if has('mouse_sgr')
-    set ttymouse=sgr
-  elseif v:version > 703 || v:version is 703 && has('patch632')
-    set ttymouse=sgr
-  elseif
-    set ttymouse=xterm2
+  if !has('nvim')
+    if has('mouse_sgr')
+      set ttymouse=sgr
+    elseif v:version>703 || v:version is 703 && has('patch632')
+      set ttymouse=sgr
+    elseif
+      set ttymouse=xterm2
+    endif
   endif
 endif
+
 
 " edit
 set virtualedit=onemore " move to last character
@@ -70,7 +77,12 @@ set backspace=indent,eol,start " enable backspace
 
 "--- copy/paste ---
 " clipboard
-set clipboard=unnamed,autoselect
+if has('nvim')
+  set clipboard=unnamed
+else
+  set clipboard=unnamed,autoselect
+endif
+
 
 " paste
 if &term =~ "xterm"

@@ -30,6 +30,10 @@ case `uname` in
     # python
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PATH:$PYENV_ROOT/bin"
+
+    # rust
+    export PATH="$PATH:$HOME/.cargo/env"
+    export PATH="$PATH:$HOME/.cargo/bin"
   ;;
 
   "Linux" )

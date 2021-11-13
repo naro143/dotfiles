@@ -6,72 +6,46 @@ set termencoding=utf-8
 set fileencodings=utf-8,ucs-boms,euc-jp,ep932
 set fileformats=unix,dos,mac
 
-set nobomb
-
-" view
-set guifont=SauceCodePro\ Nerd\ Font\ Medium:h14
-set ambiwidth=double "show chars like □, ○
-set nocursorline
-set nocursorcolumn
-set nonumber
-
-" set relativenumber
-" show zenkaku space
-function! ZenkakuSpace()
-  highlight ZenkakuSpace cterm=reverse ctermfg=red guibg=black
-endfunction
-if has('syntax')
-  augroup ZenkakuSpace
-    autocmd!
-    autocmd ColorScheme * call ZenkakuSpace()
-    autocmd VimEnter,WinEnter,BufRead * match ZenkakuSpace /　/
-  augroup END
-  call ZenkakuSpace()
-endif
+" set python version
+set pyxversion=3
 
 " fast drawing
-set lazyredraw
-set ttyfast
+set lazyredraw " stop redraw while executing some commands
+set ttyfast " enable fast terminal connection
 
-set autoread
-set hidden
-set noshowcmd
-set noshowmode
+set autoread " automatically read file changes
+set hidden " allow to open other files
 
-" not create file
+" not create unnecessary file
 set nobackup
 set noswapfile
 set nowritebackup
 set noundofile
 
-" %jump
-
 " completion
 set wildmenu
 set wildmode=list:full
-set history=100
 
-set laststatus=2 " always show statusline
-
-" tab, indent
-filetype plugin indent on
-set expandtab
+" tab
+set expandtab " replace tab with spaces
 set tabstop=2
 set softtabstop=2
-set autoindent
-set smartindent
 set shiftwidth=2
-au FileType go setlocal sw=4 ts=4 sts=4 noet
+augroup go-indent
+  autocmd!
+  autocmd FileType go setlocal sw=4 ts=4 sts=4 noet
+augroup END
 
-" show matched braces
-set showmatch
+" indent
+set autoindent " keep current indent
+set smartindent " indent for C-like syntax
 
-" Search
-set incsearch
-set smartcase
-set ignorecase
-set hlsearch
-set wrapscan
+" search
+set incsearch " incremental search
+set smartcase " ignore ignorecase when includes upper case letters
+set ignorecase " ignore upper/lower case
+set hlsearch " highlight search result
+set wrapscan " re-search after end of file
 set wildignore+=*/tmp*,*.so,*.swp,*.zip
 
 "--- cursor ---
@@ -112,27 +86,3 @@ if &term =~ "xterm"
   inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
 endif
 
-if &compatible
-  set nocompatible
-endif
-
-" fold
-" zc : close all folds under the cursor
-" zO : open all folds under the cursor
-" zM : close all folds in file
-" zR : open all folds in file
-set foldmethod=syntax
-set foldlevelstart=0
-set foldnestmax=2
-function! CustomFoldText()
-  let length = v:foldend - v:foldstart + 1
-  let firstLine = getline(v:foldstart)
-  let txt = '+ ' . firstLine . ' -- ' . length . ' lines'
-  return txt
-endfunction
-set foldtext=CustomFoldText() " set custom fold text
-
-" save fold state
-autocmd BufWinLeave * mkview
-autocmd BufWinEnter * silent! loadview
-autocmd BufWritePost * normal! zv

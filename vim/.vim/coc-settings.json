@@ -1,46 +1,21 @@
 {
   "coc.preferences.formatOnSaveFiletypes": [
-    "dart",
     "css",
     "Markdown"
   ],
   "languageserver": {
-    "dockerfile": {
-      "command": "docker-langserver",
-      "filetypes": ["dockerfile"],
-      "args": ["--stdio"]
-    },
-    "efm": {
-      "command": "efm-langserver",
-      "args": ["-c", "~/dotfiles/efm-langserver/efm-config.yml"],
-      "filetypes": ["vim", "eruby", "markdown"]
-    },
-    "terraform": {
-      "command": "terraform-lsp",
-      "filetypes": ["terraform"],
-      "initializationOptions": {}
-    },
-    "golangci-lint-languageserver": {
-      "command": "golangci-lint-langserver",
-      "filetypes": ["go"],
-      "initializationOptions": {
-        "command": ["golangci-lint", "run", "--enable-all", "--disable", "lll", "--out-format", "json"]
-      }
-    },
-    "prototool-lint": {
-      "command": "prototool",
-      "args": ["lint"],
-      "filetypes": ["proto"]
+    "ruby": {
+      "command": "solargraph",
+      "filetypes": ["rb", "ruby"],
+      "args": ["stdio"]
     },
     "dls": {
       "command": "diagnostic-languageserver",
       "args": ["--stdio"],
-      "filetypes": ["go", "dockerfile", "shell"],
+      "filetypes": ["shell"],
       "initializationOptions": {
         "formatters": {},
         "filetypes": {
-          "go": [],
-          "dockerfile": ["hadolint"],
           "sh": "shellcheck"
         },
         "formatFiletypes": {},
@@ -68,44 +43,10 @@
               "info": "info",
               "style": "hint"
             }
-          },
-          "hadolint": {
-            "command": "hadolint",
-            "sourceName": "hadolint",
-            "args": [
-              "-f",
-              "json",
-              "-"
-            ],
-            "parseJson": {
-              "line": "line",
-              "column": "column",
-              "security": "level",
-              "message": "${message} [${code}]"
-            },
-            "securities": {
-              "error": "error",
-              "warning": "warning",
-              "info": "info",
-              "style": "hint"
-            }
           }
         }
       }
     }
-  },
-  "eslint.run": "onSave",
-  "snippets.extends": {
-    "javascriptreact": ["javascript"],
-    "typescriptreact": ["javascript", "javascript-jasmine-arrow"],
-    "typescript": ["javascript", "javascript-jasmine-arrow"]
-  },
-  "cSpell.userWords": [
-    "gopls", "langserver", "dotfiles", "firestore", "stackdriver", "ebiken", "ebinuma", "kenichi", "ebkn", "grpc",
-    "hadolint", "unimported", "shellcheck", "eruby", "golangci", "dein", "zenkaku", "nosplit", "healthcheck",
-    "clangd", "solargraph", "vetur", "vim", "neovim", "datetime", "protoc", "protobuf", "proto", "prototool",
-    "memorystore", "autoscaler", "gserviceaccount", "tfstate", "googleapis", "tmpl", "malloc", "nolint", "gosec",
-    "argocd", "markdownlint", "omnisharp", "tailwindcss", "gcloud", "imgproxy", "healthz", "webp", "vint", "textlint"
-  ]
+  }
 }
 

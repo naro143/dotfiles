@@ -42,7 +42,7 @@ nnoremap <C-b> :Buffers<CR>
 repo = 'antoinemadec/coc-fzf'
 depends_on = [
   'junegunn/fzf.vim',
-    'neoclide/coc.nvim',
+  'neoclide/coc.nvim',
 ]
 hook_add = '''
 nnoremap <C-d> :CocFzfList dianostics<CR>

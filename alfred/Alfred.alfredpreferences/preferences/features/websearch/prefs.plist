@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>0E6E31BD-727C-4F5F-8A09-76152D6AE8FD</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>dp</string>
+			<key>text</key>
+			<string>dena portal</string>
+			<key>url</key>
+			<string>https://sites.lumapps.com/a/dena/home/search/{query}/all</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>21BB8F2B-DAFE-4F9A-A888-1916B7918F15</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>tb</string>
+			<key>text</key>
+			<string>talent base</string>
+			<key>url</key>
+			<string>https://talentbase.dena.com/list?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>78B3E667-041F-4F90-99B4-CE984A5BD93B</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>hb</string>
+			<key>text</key>
+			<string>hatena book mark add</string>
+			<key>url</key>
+			<string>https://b.hatena.ne.jp/bizken/add.confirm?url={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>8879EC66-8DF8-4A96-A7F3-9D686B1AB480</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>memo</string>
+			<key>text</key>
+			<string>143memo</string>
+			<key>url</key>
+			<string>https://scrapbox.io/143memo/search/page?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

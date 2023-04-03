@@ -3,6 +3,9 @@ export PATH="$PATH:$HOME/.fzf/bin"
 
 case `uname` in
   "Darwin" ) # requires gnu-sed
+    # Homebrew
+    export PATH="/opt/homebrew/bin:$PATH"
+
     # andoroid
     export ANDROID_HOME=$HOME/Library/Android/sdk
     export PATH="$PATH:$ANDROID_HOME/tools"

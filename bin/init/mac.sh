@@ -11,7 +11,7 @@ defaults write -g InitialKeyRepeat -int 11
 defaults write com.apple.finder AppleShowAllFiles TRUE
 
 printf "\n--- Installing HomeBrew ---\n"
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew update
 brew doctor
 printf "\n--- Homebrew installed ---\n"
@@ -72,8 +72,8 @@ ln -s ~/dotfiles/vim/coc/package.json ~/.config/coc/extensions/
 # others
 ln -s ~/dotfiles/tig/.tigrc ~
 ln -s ~/dotfiles/efm-langserver/efm-config.yml ~/.config/efm-langserverconfig.yaml
-ln -s ~/dotfiles/yabai/.yabairc ~/.yabairc
-ln -s ~/dotfiles/skhd/.skhdrc ~/.skhdrc
+# ln -s ~/dotfiles/yabai/.yabairc ~/.yabairc
+# ln -s ~/dotfiles/skhd/.skhdrc ~/.skhdrc
 ln -s ~/dotfiles/ripgrep/.rgignore ~/.rgignore
 
 source ~/.zshrc
@@ -99,8 +99,8 @@ ln -s ~/dotfiles/flutter/analysis_options.yaml ~
 printf "\n--- Installing apps by Homebrew-Cask.. ---\n"
 brew bundle --file="~/dotfiles/brewfiles/cask"
 
-[ -d ~/.alacritty.yml ] && mv ~/.alacritty.yml ~/backup/
-ln -s ~/dotfiles/alacritty/.alacritty.mac.yml ~/.alacritty.yml
+# [ -d ~/.alacritty.yml ] && mv ~/.alacritty.yml ~/backup/
+# ln -s ~/dotfiles/alacritty/.alacritty.mac.yml ~/.alacritty.yml
 
 [ -f ~/.gitconfig ] && mv ~/.gitconfig ~/backup/
 ln -s ~/dotfiles/git/.gitconfig ~/.gitconfig

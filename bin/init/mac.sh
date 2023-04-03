@@ -41,8 +41,8 @@ printf "\n--- Starting zsh ---\n"
 
 [ -f ~/.zshrc ] && mv ~/.zshrc ~/backup/
 [ -f ~/.zshenv ] && mv ~/.zshenv ~/backup/
-ln -s ~/dotfiles/.zshrc ~
-ln -s ~/dotfiles/.zshenv ~
+ln -s ~/dotfiles/zsh/.zshrc ~
+ln -s ~/dotfiles/zsh/.zshenv ~
 
 printf "\n--- Installing dein ---\n"
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ~/installer.sh

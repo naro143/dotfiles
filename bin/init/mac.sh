@@ -11,7 +11,12 @@ defaults write -g InitialKeyRepeat -int 11
 defaults write com.apple.finder AppleShowAllFiles TRUE
 
 printf "\n--- Installing HomeBrew ---\n"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if ! command -v brew 2> /dev/null; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+export PATH="/usr/local/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 brew update
 brew doctor
 printf "\n--- Homebrew installed ---\n"
@@ -23,18 +28,21 @@ printf "\n--- Installing openssl ---\n"
 brew install openssl
 
 printf "\n--- Cloning dotfiles ---\n"
-git clone https://github.com/naro143/dotfiles ~/dotfiles
+if [ ! -d ~/dotfiles ]; then
+  git clone https://github.com/naro143/dotfiles ~/dotfiles
+fi
 
 printf "\n--- Setup shell... ---\n"
-chsh -s /usr/local/bin/zsh
+# before execute the following line, you should add /opt/homebrew/bin/zsh to /etc/shells
+chsh -s "$(brew --prefix)/bin/zsh"
 
 printf "\n--- Starting zsh ---\n"
-zsh
+"$(brew --prefix)/bin/zsh"
 
 [ -f ~/.zshrc ] && mv ~/.zshrc ~/backup/
 [ -f ~/.zshenv ] && mv ~/.zshenv ~/backup/
-ln -s ~/dotfiles/zsh/.zshrc ~
-ln -s ~/dotfiles/zsh/.zshenv ~
+ln -s ~/dotfiles/.zshrc ~
+ln -s ~/dotfiles/.zshenv ~
 
 printf "\n--- Installing dein ---\n"
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ~/installer.sh
@@ -55,6 +63,8 @@ curl -O https://raw.githubusercontent.com/h-matsuo/macOS-trash/master/trash; chm
 [ -d ~/.vim ] && mv ~/.vim ~/backup/
 [ -f ~/.config/coc/extensions/package.json ] && mv ~/.config/coc/extensions/package.json ~/backup/
 [ -f ~/.tigrc ] && mv ~/.tigrc ~/backup/
+
+"$(brew --prefix)/opt/fzf/install"
 
 ln -s ~/dotfiles/git/.gitignore_global ~
 ln -s ~/dotfiles/bash/.bash_profile ~
@@ -79,6 +89,7 @@ ln -s ~/dotfiles/ripgrep/.rgignore ~/.rgignore
 source ~/.zshrc
 
 printf "\n--- Starting tmux ---\n"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux
 tmux source-file ~/.tmux.conf
 

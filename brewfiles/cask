@@ -18,15 +18,17 @@ cask 'chromedriver'
 # cask 'authy'
 
 # chat application
+cask 'slack'
 cask 'discord'
+
+# storage
+cask 'google-drive'
 
 # input
 cask 'google-japanese-ime'
 cask 'cmd-eikana'
 
 cask 'visual-studio-code'
-cask 'android-studio'
 
 # others
-cask 'ngrok'
-cask 'zoomus'
+cask 'zoom'

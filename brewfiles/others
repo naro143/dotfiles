@@ -8,7 +8,7 @@ brew 'mycli'
 brew 'sqlite'
 brew 'postgresql'
 
-brew 'kubernetes-cli'
+# brew 'kubernetes-cli'
 
 # window manager
 # brew 'koekeishiya/formulae/yabai'

@@ -2,22 +2,21 @@
 
 if [ `uname` = 'Darwin' ]; then
   function rbenv() {
-    unset -f rbenv
+    unfunction "$0"
     eval "$(rbenv init - --no-rehash)"
-    rbenv "$@"
+    $0 "$@"
   }
 
   function pyenv() {
-    unset -f pyenv
+    unfunction "$0"
     eval "$(pyenv init - --no-rehash)"
-    eval "$(pyenv virtualenv-init - --no-rehash)"
-    pyenv "$@"
+    $0 "$@"
   }
 
   function nodenv() {
-    unset -f nodenv
+    unfunction "$0"
     eval "$(nodenv init - --no-rehash)"
-    nodenv "$@"
+    $0 "$@"
   }
 
   function goenv() {
@@ -26,4 +25,3 @@ if [ `uname` = 'Darwin' ]; then
     goenv "$@"
   }
 fi
-

@@ -23,6 +23,7 @@ alias sed='gsed'
 # requires github/gh/gh
 alias github="gh repo view --web"
 alias pr="gh pr create"
+alias git_branch_cleanup="git branch --merged|egrep -v '\*|develop|main'|xargs git branch -d;git fetch --prune;"
 
 alias dc='docker-compose'
 alias kc='kubectl'

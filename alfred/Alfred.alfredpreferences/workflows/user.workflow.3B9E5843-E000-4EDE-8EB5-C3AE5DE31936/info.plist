@@ -154,6 +154,10 @@
 				<false/>
 				<key>focusedappvariablename</key>
 				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -173,26 +177,38 @@
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
-				<integer>36</integer>
+				<integer>100</integer>
 				<key>keyword</key>
 				<string>gh</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
-				<false/>
+				<true/>
 				<key>queuedelaymode</key>
 				<integer>0</integer>
 				<key>queuemode</key>
-				<integer>2</integer>
+				<integer>1</integer>
 				<key>runningsubtext</key>
 				<string>Loading results…</string>
 				<key>script</key>
-				<string>php -f search.php -- github "{query}"</string>
+				<string>&lt;?php
+
+require 'search.php';
+
+Search::run('github', $argv[1], getenv('hotkey'));
+
+echo Workflow::getItemsAsXml();</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
@@ -200,7 +216,7 @@
 				<key>title</key>
 				<string>gh...</string>
 				<key>type</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -209,7 +225,7 @@
 			<key>uid</key>
 			<string>FC76BC27-8BCB-4BEE-AD42-EAC2D9B01F0F</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -217,15 +233,17 @@
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>36</integer>
+				<integer>100</integer>
 				<key>script</key>
-				<string>php -f action.php -- "{query}"</string>
+				<string>&lt;?php
+
+require 'action.php';</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>0</integer>
+				<integer>1</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -260,6 +278,8 @@
 			<dict>
 				<key>argument</key>
 				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict>
 					<key>hotkey</key>
@@ -284,6 +304,10 @@
 				<false/>
 				<key>focusedappvariablename</key>
 				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -303,10 +327,16 @@
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
-				<integer>36</integer>
+				<integer>100</integer>
 				<key>keyword</key>
 				<string>ghe</string>
 				<key>queuedelaycustom</key>
@@ -316,13 +346,19 @@
 				<key>queuedelaymode</key>
 				<integer>0</integer>
 				<key>queuemode</key>
-				<integer>2</integer>
+				<integer>1</integer>
 				<key>runningsubtext</key>
 				<string>Loading results…</string>
 				<key>script</key>
-				<string>php -f search.php -- enterprise "{query}"</string>
+				<string>&lt;?php
+
+require 'search.php';
+
+Search::run('enterprise', $argv[1], getenv('hotkey'));
+
+echo Workflow::getItemsAsXml();</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
@@ -330,7 +366,7 @@
 				<key>title</key>
 				<string>ghe...</string>
 				<key>type</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -339,7 +375,7 @@
 			<key>uid</key>
 			<string>95CD1A63-A0C6-4458-9817-9C6B1A90C827</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -348,6 +384,8 @@
 				<true/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
 				<key>transient</key>
 				<false/>
 			</dict>
@@ -356,13 +394,15 @@
 			<key>uid</key>
 			<string>87F10E6D-697C-47CE-BD78-E7174F5DF815</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
 				<key>argument</key>
 				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict>
 					<key>hotkey</key>
@@ -400,12 +440,57 @@
 	<string>Changelog
 =========
 
+Version 1.8.1 – 2022-10-16
+--------------------------
+
+### Bugfix
+
+* Fixed version number in workflow
+
+
+Version 1.8 – 2022-10-15
+------------------------
+
+### Features
+
+* New command `gh user/repo dev` opening repo in Visual Studio Code (Codespaces)
+* New command `gh user/repo discussions`
+* New command `gh my repos new`
+* Search issues by title (`gh user/repo #search`)
+* Archived repos with prefix `[Archived]` in subtitle
+* Performance improvement
+
+### Bugfixes
+
+* Fix result display for non-PR issue IDs (@tobias-grasse)
+* Fix git clone url, use new `x-github-client://` scheme
+
+
+Version 1.7.1 – 2022-01-01
+--------------------------
+
+### Bugfixes
+
+* Fix deprecation warning when using PHP 8.1
+
+
+Version 1.7 – 2021-10-26
+------------------------
+
+### Features
+
+* Support for macOS 12 Montery: PHP is no longer pre-installed, you must install it by yourself via [Homebrew](https://brew.sh) (`brew install php`)
+* Better support for Alfred 4
+* new command `gh user/repo actions` (@Attsun1031)
+* command `gh user/repo new issue` lands on issue template selector page (@riastrad)
+
+
 Version 1.6.2 – 2018-02-13
 --------------------------
 
 ### Bugfixes
 
-* Api pagination didnt work correctly any more (missing results from page &gt; 2)
+* Api pagination didnt work correctly anymore (missing results from page &gt; 2)
 
 
 Version 1.6.1 – 2017-09-23
@@ -494,8 +579,7 @@ Version 1.1 – 2015-01-10
 
 ### Bugfixes
 
-* A space after `gh` is required to avoid confusion when using commands of other workflows like `ghost`
-</string>
+* A space after `gh` is required to avoid confusion when using commands of other workflows like `ghost`</string>
 	<key>uidata</key>
 	<dict>
 		<key>14CA19E2-6328-4201-905E-A751E2BA47B5</key>
@@ -505,39 +589,39 @@ Version 1.1 – 2015-01-10
 			<key>note</key>
 			<string>GitHub Enterprise</string>
 			<key>xpos</key>
-			<integer>30</integer>
+			<real>30</real>
 			<key>ypos</key>
-			<integer>230</integer>
+			<real>230</real>
 		</dict>
 		<key>29045171-6618-4FA4-BAB0-39C10422CF31</key>
 		<dict>
 			<key>xpos</key>
-			<integer>600</integer>
+			<real>600</real>
 			<key>ypos</key>
-			<integer>40</integer>
+			<real>40</real>
 		</dict>
 		<key>67ADBB8D-C705-4981-BB9B-7C9238BEFF2E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>790</integer>
+			<real>790</real>
 			<key>ypos</key>
-			<integer>40</integer>
+			<real>40</real>
 		</dict>
 		<key>87F10E6D-697C-47CE-BD78-E7174F5DF815</key>
 		<dict>
 			<key>xpos</key>
-			<integer>790</integer>
+			<real>790</real>
 			<key>ypos</key>
-			<integer>230</integer>
+			<real>230</real>
 		</dict>
 		<key>94B48881-907F-4752-AAA0-234EA30CFC18</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>12</integer>
 			<key>xpos</key>
-			<integer>220</integer>
+			<real>220</real>
 			<key>ypos</key>
-			<integer>70</integer>
+			<real>70</real>
 		</dict>
 		<key>95CD1A63-A0C6-4458-9817-9C6B1A90C827</key>
 		<dict>
@@ -546,25 +630,25 @@ Version 1.1 – 2015-01-10
 			<key>note</key>
 			<string>GitHub Enterprise</string>
 			<key>xpos</key>
-			<integer>330</integer>
+			<real>330</real>
 			<key>ypos</key>
-			<integer>230</integer>
+			<real>230</real>
 		</dict>
 		<key>9715D8FA-0199-450F-99B8-64796B5AC6CB</key>
 		<dict>
 			<key>xpos</key>
-			<integer>680</integer>
+			<real>680</real>
 			<key>ypos</key>
-			<integer>260</integer>
+			<real>260</real>
 		</dict>
 		<key>ABE8DD6E-CD29-4E70-87CF-1382A0446009</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>9</integer>
 			<key>xpos</key>
-			<integer>220</integer>
+			<real>220</real>
 			<key>ypos</key>
-			<integer>260</integer>
+			<real>260</real>
 		</dict>
 		<key>DAA505B9-F86C-4AF8-818B-8F614F01485E</key>
 		<dict>
@@ -573,9 +657,9 @@ Version 1.1 – 2015-01-10
 			<key>note</key>
 			<string>github.com</string>
 			<key>xpos</key>
-			<integer>30</integer>
+			<real>30</real>
 			<key>ypos</key>
-			<integer>40</integer>
+			<real>40</real>
 		</dict>
 		<key>FC76BC27-8BCB-4BEE-AD42-EAC2D9B01F0F</key>
 		<dict>
@@ -584,18 +668,20 @@ Version 1.1 – 2015-01-10
 			<key>note</key>
 			<string>github.com</string>
 			<key>xpos</key>
-			<integer>330</integer>
+			<real>330</real>
 			<key>ypos</key>
-			<integer>40</integer>
+			<real>40</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>variables</key>
 	<dict>
 		<key>hotkey</key>
 		<string>0</string>
 	</dict>
 	<key>version</key>
-	<string>1.6.2</string>
+	<string>1.8.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/gharlan/alfred-github-workflow</string>
 </dict>

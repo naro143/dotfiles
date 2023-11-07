@@ -1,12 +1,57 @@
 Changelog
 =========
 
+Version 1.8.1 – 2022-10-16
+--------------------------
+
+### Bugfix
+
+* Fixed version number in workflow
+
+
+Version 1.8 – 2022-10-15
+------------------------
+
+### Features
+
+* New command `gh user/repo dev` opening repo in Visual Studio Code (Codespaces)
+* New command `gh user/repo discussions`
+* New command `gh my repos new`
+* Search issues by title (`gh user/repo #search`)
+* Archived repos with prefix `[Archived]` in subtitle
+* Performance improvement
+
+### Bugfixes
+
+* Fix result display for non-PR issue IDs (@tobias-grasse)
+* Fix git clone url, use new `x-github-client://` scheme
+
+
+Version 1.7.1 – 2022-01-01
+--------------------------
+
+### Bugfixes
+
+* Fix deprecation warning when using PHP 8.1
+
+
+Version 1.7 – 2021-10-26
+------------------------
+
+### Features
+
+* Support for macOS 12 Montery: PHP is no longer pre-installed, you must install it by yourself via [Homebrew](https://brew.sh) (`brew install php`)
+* Better support for Alfred 4
+* new command `gh user/repo actions` (@Attsun1031)
+* command `gh user/repo new issue` lands on issue template selector page (@riastrad)
+
+
 Version 1.6.2 – 2018-02-13
 --------------------------
 
 ### Bugfixes
 
-* Api pagination didn't work correctly any more (missing results from page > 2)
+* Api pagination didn't work correctly anymore (missing results from page > 2)
 
 
 Version 1.6.1 – 2017-09-23

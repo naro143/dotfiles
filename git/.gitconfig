@@ -1,4 +1,4 @@
-[includeIf "gitdir:~/ghq/src/github.com/"]
+[includeIf "gitdir:~/ghq/github.com/"]
   path = ~/.gitconfig-naro143
 [includeIf "gitdir:~/dotfiles/"]
   path = ~/.gitconfig-naro143
@@ -54,4 +54,4 @@
   process = git-lfs filter-process
 
 [ghq]
-  root = ~/ghq/src
+  root = ~/ghq

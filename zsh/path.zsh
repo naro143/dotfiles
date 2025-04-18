@@ -20,7 +20,7 @@ case `uname` in
 
     # golang
     export GOPATH="$HOME/ghq"
-    export GOROOT="/opt/homebrew/Cellar/go/1.23.2/libexec"
+    export GOROOT="/opt/homebrew/opt/go/libexec"
     export PATH="$PATH:$GOPATH/bin"
 
     # java
